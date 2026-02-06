@@ -1,4 +1,37 @@
-       let array = [1, 2, 3, 4, 5, 6];
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сортировка массива</title>
+</head>
+<body>
+    <h2>Сортировка массива:</h2>
+
+    <script>
+        // Исходный массив
+        let numbers = [5, 2, 9, 1, 7, 3];
+
+        // Сортировка по возрастанию
+        let ascending = [...numbers].sort((a, b) => a - b); // a - b для чисел
+        document.write("По возрастанию: " + ascending.join(", ") + "<br>");
+
+        // Сортировка по убыванию
+        let descending = [...numbers].sort((a, b) => b - a); // b - a для чисел
+        document.write("По убыванию: " + descending.join(", "));
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+let array = [1, 2, 3, 4, 5, 6];
 
         // Сколько элементов удалить
         let N = 3;
