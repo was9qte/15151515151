@@ -1,0 +1,65 @@
+// ========================
+// 5.1 Создание массивов
+// ========================
+
+// Ввод размера массива
+let N = parseInt(prompt("Введите размер первого массива (N):"));
+
+// Проверка ввода
+if (isNaN(N) || N <= 0) {
+    alert("Ошибка! Введите положительное число.");
+} else {
+    // Первый массив с N случайными числами от 0 до 100
+    let array1 = [];
+    for (let i = 0; i < N; i++) {
+        array1.push(Math.floor(Math.random() * 101));
+    }
+
+    // Второй массив с нечетными числами из первого
+    let array2 = array1.filter(num => num % 2 !== 0);
+
+    // Вывод массивов
+    console.log("5.1. Первый массив: " + array1.join(", "));
+    console.log("5.1. Второй массив (нечетные числа): " + array2.join(", "));
+
+
+    // ========================
+    // 5.2 Вставка элементов одного массива в конец другого
+    // ========================
+    let arrayA = prompt("Введите первый массив для 5.2 через запятую:").split(",").map(Number);
+    let arrayB = prompt("Введите второй массив для 5.2 через запятую:").split(",").map(Number);
+
+    // Вставляем все элементы arrayB в arrayA
+    arrayB.forEach(element => arrayA.push(element));
+
+    console.log("\n5.2. Массив после вставки элементов:");
+    arrayA.forEach((value, index) => {
+        console.log(`arrayA[${index}] = ${value}`);
+    });
+
+
+    // ========================
+    // 5.3 Удаление N элементов с помощью pop()
+    // ========================
+    let array3 = prompt("Введите массив для 5.3 через запятую:").split(",").map(Number);
+    let removeCount = parseInt(prompt("Сколько элементов удалить из конца массива?"));
+
+    if (isNaN(removeCount) || removeCount < 0) removeCount = 0;
+    for (let i = 0; i < removeCount; i++) {
+        array3.pop();
+    }
+
+    console.log("\n5.3. Массив после удаления элементов: " + array3.join(", "));
+
+
+    // ========================
+    // 5.4 Сортировка массива
+    // ========================
+    let array4 = prompt("Введите массив для сортировки 5.4 через запятую:").split(",").map(Number);
+
+    let ascArray = [...array4].sort((a, b) => a - b);
+    let descArray = [...array4].sort((a, b) => b - a);
+
+    console.log("\n5.4. Сортировка по возрастанию: " + ascArray.join(", "));
+    console.log("5.4. Сортировка по убыванию: " + descArray.join(", "));
+}
